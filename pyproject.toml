@@ -1,0 +1,32 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "uber_rode_prediction_pipeline"
+version = "0.0.1"
+description = "A follow along project for cab dmand prediction in New York"
+authors = [
+  { name = "Narendra" },
+]
+
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    
+]
+requires-python = "~=3.10.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["uber_rode_prediction_pipeline"]
+include = ["pyproject.toml", "uber_rode_prediction_pipeline/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["uber_rode_prediction_pipeline"]
+force-sort-within-sections = true
+
