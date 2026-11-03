@@ -1,0 +1,36 @@
+stages:
+  data_ingestion:
+    cmd: python3 notebooks/data_ingestion.py
+    deps:
+    - notebooks/data_ingestion.py
+    params:
+    - data_ingestion
+    outs:
+    - data/interim/data_without_outliers.csv
+  extract_features:
+    cmd: python3 notebooks/extract_feeatures.py
+    deps:
+    - data/interim/data_without_outliers.csv
+    - notebooks/extract_feeatures.py
+    params:
+    - extract_features
+    outs:
+    - data/processed/data_with_features.csv
+    - models/k_means.joblib
+    - models/scaler.joblib
+  feature_building:
+    cmd: python3 notebooks/feature_building.py
+    deps:
+    - data/processed/data_with_features.csv
+    - notebooks/feature_building.py
+    outs:
+    - data/processed/test_data.csv
+    - data/processed/train_data.csv
+  model_training:
+    cmd: python3 notebooks/train.py
+    deps:
+    - data/processed/train_data.csv
+    - notebooks/train.py
+    outs:
+    - models/encoder.joblib
+    - models/lr_model.joblib

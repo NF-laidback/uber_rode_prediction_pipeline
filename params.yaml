@@ -1,0 +1,17 @@
+data_ingestion:
+  min_latitude: 40.60
+  max_latitude: 40.85
+  min_longitude: -74.05
+  max_longitude: -73.70
+  min_fare_amount: 0.50
+  max_fare_amount: 81.0
+  min_trip_distance: 0.25
+  max_trip_distance: 24.43
+
+extract_features:
+  mini_batch_kmeans:
+    n_clusters: 12
+    n_init: 10
+    random_state: 42
+  ewma:
+    alpha: 0.4
