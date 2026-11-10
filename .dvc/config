@@ -1,0 +1,4 @@
+[core]
+    remote = origin
+['remote "origin"']
+    url = https://dagshub.com/NF-laidback/uber_rode_prediction_pipeline.dvc

@@ -34,3 +34,14 @@ stages:
     outs:
     - models/encoder.joblib
     - models/lr_model.joblib
+  model_evaluation:
+    cmd: python3 notebooks/evaluate.py
+    deps:
+    - data/processed/test_data.csv
+    - data/processed/train_data.csv
+    - models/encoder.joblib
+    - models/lr_model.joblib
+    - notebooks/evaluate.py
+    - requirements.txt
+    outs:
+    - run_info.json

@@ -96,3 +96,35 @@ stages:
       hash: md5
       md5: e47541235404ef1844fabee8010b0508
       size: 1617
+  model_evaluation:
+    cmd: python3 notebooks/evaluate.py
+    deps:
+    - path: data/processed/test_data.csv
+      hash: md5
+      md5: 79f37f49b5529d3827465292276d9998
+      size: 2081035
+    - path: data/processed/train_data.csv
+      hash: md5
+      md5: 1512f5c95b4f919f973355a16f16cac3
+      size: 4007866
+    - path: models/encoder.joblib
+      hash: md5
+      md5: ecce0f8ed18327ff0734e2bb0d5eb1b3
+      size: 3234
+    - path: models/lr_model.joblib
+      hash: md5
+      md5: e47541235404ef1844fabee8010b0508
+      size: 1617
+    - path: notebooks/evaluate.py
+      hash: md5
+      md5: 5fa92a67b20ed6df11192cb15ee91c19
+      size: 3768
+    - path: requirements.txt
+      hash: md5
+      md5: 5a3334df446942424f5ccee9cc0ffd68
+      size: 35
+    outs:
+    - path: run_info.json
+      hash: md5
+      md5: 944e13189981ff59aaf25470ed9e911b
+      size: 233
